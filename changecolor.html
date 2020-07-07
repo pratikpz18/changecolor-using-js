@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Change Colour</title>
+</head>
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	button{
+		background: grey;
+		position: absolute;
+		top: 50%;
+		left:50%;
+		border-style: none;
+		padding: 10px 25px;
+		font-size: 18px;
+		font-weight: 600;
+		transform: translate(-50%,-50%);
+	}
+	p{
+		text-align: center;
+		margin-top:32px;
+		font-size: 35px;
+		font-weight: 620;
+	}
+</style>
+<body>
+	<p id="mytext"></p>
+	<button onclick="changecolour()" >Change Colour</button>
+</body>
+<script >
+	let name=prompt("enter your name");
+	const v=document.querySelector("p");
+	const change=document.querySelector("button");
+	const bd=document.querySelector("body");
+	const Colour=["#003399","#00ffcc","#33ccff","#FB4109","#ccffff","#12E919","#E912E2","#ffff66","#99DEF2","#09FBEE","#E02538","#E912B6","#58D68D","ff99cc","#FFC300","#ccffff","#41A6E4","#FB4109","#ff6666","#12E919","#E912E2","#E0E912","#ff6666","#09FBEE","#E02538","#E912B6","#58D68D","#cc00ff","#66ffff","#0066ff","#33ccff","#00ff99","#00ff99","#ffffff","#ffff990","#666699","#ffff00","#cc6699","#00ffff","#ff66ff","#339966"] ;
+	change.addEventListener('click',changecolour);
+
+	function changecolour(){
+		let r=Math.floor(Math.random()*Colour.length);
+		let c1=Colour[r];
+		let rad=Math.floor(Math.random()*Colour.length);
+		let c2=Colour[rad];
+		gradien = "linear-gradient(to left"+","+c1+","+c2+")" ;
+		bd.style.backgroundImage=gradien;
+		document.getElementById("mytext").innerHTML = "Hello  " + name +"!";
+	}
+
+</script>
+</html>
