@@ -34,7 +34,6 @@
 	const v=document.querySelector("p");
 	const change=document.querySelector("button");
 	const bd=document.querySelector("body");
-	v.innerHTML = "Hello  " + name +"!";
 	const Colour=["#003399","#00ffcc","#33ccff","#FB4109","#ccffff","#12E919","#E912E2","#ffff66","#99DEF2","#09FBEE","#E02538","#E912B6","#58D68D","ff99cc","#FFC300","#ccffff","#41A6E4","#FB4109","#ff6666","#12E919","#E912E2","#E0E912","#ff6666","#09FBEE","#E02538","#E912B6","#58D68D","#cc00ff","#66ffff","#0066ff","#33ccff","#00ff99","#00ff99","#ffffff","#ffff990","#666699","#ffff00","#cc6699","#00ffff","#ff66ff","#339966"] ;
 	change.addEventListener('click',changecolour);
 	function changecolour(){
@@ -43,7 +42,9 @@
 		let rad=Math.floor(Math.random()*Colour.length);
 		let c2=Colour[rad];
 		gradien = "linear-gradient(to left"+","+c1+","+c2+")" ;
-		bd.style.backgroundImage=gradien;
+                bd.style.backgroundImage=gradien;
+                v.innerHTML = "Hello  " + name +"!";
+	
 	}
 
 </script>
